@@ -1,0 +1,6 @@
+models/xlm-roberta-base-language-detection/.git
+models/xlm-roberta-base-language-detection/pytorch_model.bin
+models/xlm-roberta-base-language-detection/tf_model.h5
+models/xlm-roberta-base-language-detection-onnx/.git
+models/xlm-roberta-base-language-detection-onnx/model.onnx
+models/xlm-roberta-base-language-detection-onnx/model_optimized.onnx

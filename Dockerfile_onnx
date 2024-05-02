@@ -1,0 +1,11 @@
+FROM python:3.9-slim
+
+WORKDIR /workspace
+
+RUN python3 -m pip install --no-cache-dir --upgrade pip \
+	&& python3 -m pip install --no-cache-dir onnxruntime transformers fastapi uvicorn
+
+COPY models/xlm-roberta-base-language-detection-onnx models/xlm-roberta-base-language-detection-onnx
+COPY api-onnx.py api.py
+
+ENTRYPOINT ["uvicorn", "api:app", "--host", "0.0.0.0"]
