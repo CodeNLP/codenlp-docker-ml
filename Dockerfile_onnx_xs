@@ -1,0 +1,12 @@
+FROM python:3.9-slim
+
+WORKDIR /workspace
+
+RUN python3 -m pip install --no-cache-dir --upgrade pip \
+	&& python3 -m pip install --no-cache-dir onnxruntime tokenizers fastapi uvicorn
+
+COPY models/xlm-roberta-base-language-detection-onnx.tar.gz models/xlm-roberta-base-language-detection-onnx.tar.gz
+COPY api-onnx-xs.py api.py
+COPY entrypoint_onnx_xs.sh entrypoint_onnx_xs.sh
+
+ENTRYPOINT ["bash", "entrypoint_onnx_xs.sh"]

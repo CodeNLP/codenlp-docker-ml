@@ -4,6 +4,12 @@ docker_onnx_build:
 docker_onnx_run:
 	docker run -p 8000:8000 language_detection_onnx
 
+docker_onnx_xs_build:
+	docker build -t language_detection_onnx_xs . -f Dockerfile_onnx_xs
+
+docker_onnx_xs_run:
+	docker run -p 8000:8000 language_detection_onnx_xs
+
 docker_cuda_build:
 	docker build -t language_detection_cuda . -f Dockerfile_cuda
 
